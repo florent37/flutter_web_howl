@@ -1,14 +1,35 @@
 # flutter_web_howl
 
-A new Flutter package.
+Howl.js wrapper for Flutter
 
-## Getting Started
+You can now include Howl.js using `initializeHowl()` anywhere in your FlutterWeb plugin
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+Then access Howl methods : 
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+```dart
+class Howl {
+  Howl({List<String> src, bool autoPlay = false});
+
+  void play();
+  void pause();
+  void stop();
+
+  HowlState state(); //loading, loaded, undefined
+
+  double seek([double seek]);
+  void mute(bool mute);
+  bool get playing;
+  double volume([double volume]);
+  double get duration;
+  void on(String event, Function callback);
+  void onLoad(Function(dynamic id) callback);
+  void onPlay(Function(dynamic id) callback);
+  void onPause(Function(dynamic id) callback);
+  void onStop(Function(dynamic id) callback);
+  void onEnd(Function(dynamic id) callback);
+}
+```
+
+Created using Package Js https://pub.dev/packages/js
+
+And import_js_library https://pub.dev/packages/import_js_library
