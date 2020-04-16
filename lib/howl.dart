@@ -26,7 +26,7 @@ class Howl {
 
   void stop() => _howlJs.stop();
 
-  void seek(dynamic seek) => _howlJs.seek(seek);
+  double seek([double seek]) => _howlJs.seek(seek);
 
   void mute(bool mute) => _howlJs.mute(mute);
 
@@ -88,7 +88,7 @@ class HowlJs {
 
   external stop();
 
-  external seek(dynamic seek);
+  external double seek([double seek]);
 
   external mute(bool mute);
 
