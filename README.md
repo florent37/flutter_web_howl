@@ -2,6 +2,8 @@
 
 Howl.js wrapper for Flutter
 
+https://pub.dev/packages/flutter_web_howl
+
 You can now include Howl.js using `initializeHowl()` anywhere in your FlutterWeb plugin
 
 Then access Howl methods : 
