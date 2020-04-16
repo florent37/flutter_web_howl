@@ -5,7 +5,8 @@ import 'package:import_js_library/import_js_library.dart';
 import 'package:js/js.dart';
 
 void initializeHowl() {
-  importJsLibrary(url: "./assets/howler.js", flutterPluginName: "flutter_web_howl");
+  importJsLibrary(
+      url: "./assets/howler.js", flutterPluginName: "flutter_web_howl");
 }
 
 // just a wrapper of the HowlJs

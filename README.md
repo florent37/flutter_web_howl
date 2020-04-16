@@ -1,4 +1,4 @@
-# flutterwebhowl
+# flutter_web_howl
 
 A new Flutter package.
 
