@@ -35,3 +35,13 @@ class Howl {
 Created using Package Js https://pub.dev/packages/js
 
 And import_js_library https://pub.dev/packages/import_js_library
+
+# Flutter Plugin
+
+this project is used for web support of Flutter-AssetsAudioPlayer
+
+https://github.com/florent37/Flutter-AssetsAudioPlayer
+
+To import & use play directly songs inside a flutter project, prefer using  [Flutter-AssetsAudioPlayer](https://pub.dev/packages/assets_audio_player)
+
+To create a web plugin which contain an audio player, use directly this library flutter_web_howl
