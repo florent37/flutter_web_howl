@@ -9,10 +9,20 @@ void initializeHowl() {
       url: "./assets/howler.js", flutterPluginName: "flutter_web_howl");
 }
 
+enum HowlState {
+  loading,
+  loaded,
+  undefined
+}
+
 // just a wrapper of the HowlJs
 // to maintain this element not modified by @Js methods
 class Howl {
   final HowlJs _howlJs;
+
+  static const stateLoading = "loading";
+  static const stateLoaded = "loaded";
+  static const stateUndefined = "undefined";
 
   Howl({List<String> src, bool autoPlay = false})
       : _howlJs = HowlJs(HowlParams(
@@ -26,7 +36,23 @@ class Howl {
 
   void stop() => _howlJs.stop();
 
-  double seek([double seek]) => _howlJs.seek(seek);
+  HowlState state() {
+    final state = _howlJs.state();
+    switch(state){
+      case stateLoading: return HowlState.loading;
+      case stateLoaded: return HowlState.loading;
+      default: return HowlState.undefined;
+    }
+  }
+
+  double seek([double seek]) {
+    final state = this.state();
+    if (state == HowlState.loaded) {
+      return _howlJs.seek(seek);
+    } else {
+      return 0;
+    }
+  }
 
   void mute(bool mute) => _howlJs.mute(mute);
 
@@ -93,6 +119,9 @@ class HowlJs {
   external mute(bool mute);
 
   external bool get playing;
+
+  //can be "unloaded", "loaded", "loading"
+  external String state();
 
   external double volume([double volume]);
 
