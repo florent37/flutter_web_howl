@@ -1,0 +1,22 @@
+name: flutter_web_howl
+description: A new Flutter web package that import & wrap the Howl.js library, to be used in Web Plugin
+version: 0.0.1
+author: Florent Champigny <champigny.florent@gmail.com>
+homepage: https://github.com/florent37/flutter_web_howl
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  import_js_library: ^0.0.2+1
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  assets:
+    - assets/howler.js
+
